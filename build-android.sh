@@ -1,6 +1,6 @@
 #!/bin/sh
 # install dep
-# sudo apt-get install gcc automake autoconf libtool make gcc-multilib
+sudo apt-get install gcc automake autoconf libtool make gcc-multilib
 
 # download ndk
 version=r20b

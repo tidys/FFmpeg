@@ -26,7 +26,6 @@ function build_android
 --disable-ffplay \
 --disable-ffprobe \
 --disable-avdevice \
---disable-doc \
 --disable-symver \
 --cross-prefix=$CROSS_PREFIX \
 --target-os=android \
