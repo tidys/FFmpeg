@@ -38,3 +38,5 @@
 /mapfile
 /tools/python/__pycache__/
 /output-win32/
+/android-ndk-r20b
+android-ndk-r20b-linux-x86_64.zip
