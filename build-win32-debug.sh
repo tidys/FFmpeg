@@ -1,7 +1,9 @@
 #!/bin/sh
+echo "make clean ..."
+make clean
 echo "configure ..."
 ./configure \
---prefix=./output-win32 \
+--prefix=./output-win32-debug \
 --enable-gpl \
 --enable-small \
 --enable-shared \
