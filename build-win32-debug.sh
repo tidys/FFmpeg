@@ -3,7 +3,7 @@ echo "make clean ..."
 make clean
 echo "configure ..."
 ./configure \
---prefix=./output-win32-debug \
+--prefix=./win32/debug \
 --enable-gpl \
 --enable-small \
 --enable-shared \
