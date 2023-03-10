@@ -33,3 +33,11 @@
 /lcov/
 /src
 /mapfile
+/output-win32/
+/android-ndk-r20b
+android-ndk-r20b-linux-x86_64.zip
+android-ndk-r14b/
+android-ndk-r17c/
+android/
+test.obj
+android-ndk-r17c-linux-x86_64.zip
