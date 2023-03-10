@@ -1,22 +1,24 @@
 #!/bin/sh
-echo "make clean ..."
-make clean
-echo "configure ..."
 ./configure \
 --prefix=./win32/release \
+--toolchain=msvc \
 --target-os=win32 \
+--arch=x86 \
 --enable-gpl \
 --enable-small \
 --enable-shared \
 --enable-cross-compile \
---toolchain=msvc \
 --disable-postproc \
 --disable-doc \
+--disable-logging \
+--disable-programs \
+--disable-ffmpeg \
 --disable-ffplay \
 --disable-ffprobe \
+--disable-ffserver \
 --disable-avdevice \
+--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00" \
+--extra-ldflags="-APPCONTAINER WindowsApp.lib" \
 --disable-symver
-
-# echo "makeing ..."
-# make -j6 #改成你的CPU核心数，6表示编译时占用6核
-# make install
+make clean
+make install
