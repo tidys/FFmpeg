@@ -3,12 +3,12 @@ echo "make clean ..."
 make clean
 echo "configure ..."
 ./configure \
---prefix=./output-win32-release \
+--prefix=./win32/release \
+--target-os=win32 \
 --enable-gpl \
 --enable-small \
 --enable-shared \
 --enable-cross-compile \
---enable-x86asm \
 --toolchain=msvc \
 --disable-postproc \
 --disable-doc \

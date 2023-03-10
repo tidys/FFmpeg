@@ -1,12 +1,11 @@
 #!/bin/bash
 echo "进入编译ffmpeg脚本"
-NDK=/home/yongdaimi/Android/android-ndk-r14b
+NDK=$(pwd)/android-ndk-r14b
 #5.0
 PLATFORM=$NDK/platforms/android-21/arch-arm
 TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
 CPU=armv7-a
 #输出路径
-PREFIX=./android/$CPU
 function buildFF
 {
     echo "开始编译ffmpeg"
@@ -42,17 +41,17 @@ function buildFF
     echo "编译结束！"
 }
 ###########################################################
-echo "编译支持neon和硬解码"
-CPU=armv7-a
-PREFIX=./android/armv7-a-neon-hard
-CFLAG="-I$PLATFORM/usr/include -fPIC -DANDROID -mfpu=neon -mfloat-abi=softfp "
-ADD="--enable-asm \
-    --enable-neon \
-    --enable-jni \
-    --enable-mediacodec \
-    --enable-decoder=h264_mediacodec \
-    --enable-hwaccel=h264_mediacodec "
-buildFF
+# echo "编译支持neon和硬解码"
+# CPU=armv7-a
+# PREFIX=./android/armv7-a-neon-hard
+# CFLAG="-I$PLATFORM/usr/include -fPIC -DANDROID -mfpu=neon -mfloat-abi=softfp "
+# ADD="--enable-asm \
+#     --enable-neon \
+#     --enable-jni \
+#     --enable-mediacodec \
+#     --enable-decoder=h264_mediacodec \
+#     --enable-hwaccel=h264_mediacodec "
+# buildFF
 
 ###########################################################
 echo "编译不支持neon和硬解码"
@@ -60,4 +59,5 @@ CPU=armv7-a
 PREFIX=./android/$CPU
 CFLAG="-I$PLATFORM/usr/include -fPIC -DANDROID -mfpu=vfp -mfloat-abi=softfp "
 ADD=
+make clean
 buildFF
