@@ -11,7 +11,7 @@ LDFLAGS="-L$PLATFORM/usr/lib"
 # 注意上次构建结果的o文件对当前链接的坑
 # libavutil/../compat/strtod.o: error adding symbols: File in wrong format
 # find . -name '*.o' -type f -print -exec rm -rf {} \;
-
+# find . -name "*.o" -type f -delete
 #输出路径
 function buildFF
 {
