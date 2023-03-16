@@ -12,6 +12,8 @@ LDFLAGS="-L$PLATFORM/usr/lib"
 # libavutil/../compat/strtod.o: error adding symbols: File in wrong format
 # find . -name '*.o' -type f -print -exec rm -rf {} \;
 # find . -name "*.o" -type f -delete
+rm -rf $PREFIX
+rm -rf ./compat/strtod.o
 #输出路径
 function buildFF
 {
@@ -32,6 +34,7 @@ function buildFF
     --enable-small \
     --enable-cross-compile \
     --disable-static \
+    --disable-debug \
     --disable-doc \
     --disable-ffmpeg \
     --disable-ffplay \
@@ -42,9 +45,9 @@ function buildFF
     --disable-symver \
     --disable-stripping \
 
-    # make -j16
-    # make install
-    # echo "编译结束！"
+    make -j16
+    make install
+    echo "编译结束！"
 } 
 make clean
 buildFF

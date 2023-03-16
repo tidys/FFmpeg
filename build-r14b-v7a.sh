@@ -25,6 +25,7 @@ function buildFF
     --enable-small \
     --enable-cross-compile \
     --disable-static \
+    --disable-debug \
     --disable-doc \
     --disable-ffmpeg \
     --disable-ffplay \
